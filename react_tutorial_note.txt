@@ -9,3 +9,28 @@ React.createElement(
   { name: "fs" },
   "Hello"
 );
+
+
+
+class App extends Component {
+  render() {
+    return (
+    <div id="name">
+    <h1>Hello</h1>
+    </div>
+    );
+  }
+}
+
+
+you can also do the above as below by creating a function above the 
+
+return (
+    <div>
+    <sayHi>Hello</sayHi>
+    </div>
+    );
+
+
+
+Class vs ess6 functional components.
