@@ -1,0 +1,11 @@
+<div name={"fs"}>Hello</div>
+
+The above JSX is transpiled into the below, using babeljs.io/repl
+
+"use strict";
+
+React.createElement(
+  "div",
+  { name: "fs" },
+  "Hello"
+);
