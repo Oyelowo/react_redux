@@ -1,0 +1,25 @@
+npm init
+npm install --save-dev webpack webpack-dev-server babel-core babel-loader babel-preset-env
+npm install --save-dev babel-polyfill babel-preset-stage-0
+
+NOTE: in webpack.config.js file, under module, use "rules" and not "loaders", as it doesn't work for the webpack 4.
+i.e:
+  module: {
+        rules: [{
+            test: /\.js?$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+            query: {
+                presets: ['env']
+            }
+        }]
+    }
+
+
+under scripts
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server --output-public-path=/build/"
+  },
