@@ -1,8 +1,32 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Parent from './components/parentToChild/parent';
+// import Child from './components/parentToChild/child.jsx'
 // import Users from './users/Users.jsx'
 
+class App extends Component {
+  state={
+    title:'placeholder title'
+  }
+
+changeTheWorld = (newTitle) => {
+  this.setState({title:newTitle})
+}
+
+  render() {
+    return (
+      <div className="App">
+      <Parent doWhatever={this.changeTheWorld.bind(this, 'new World')} title={this.state.title}/>
+      </div>
+    )
+  }
+}
+
+export default App;
+
+/*
+//  two way binding
 class App extends Component {
   state = {
     name: "Oyelowo"
@@ -23,10 +47,10 @@ class App extends Component {
         <br/>
 
         <button onClick={()=> this.changeName('Cool Oyelowo')}>Change State non anonymous function</button>
-{/* alternative */}
+//alternative
 <button onClick={this.changeName.bind(this, 'Calm Oyelowo')}>Change State using bind</button>
 <br/><br/>
-{/* you have to provide onChange when you provide value */} 
+//  you have to provide onChange when you provide value
 <input type="text" onChange={this.changeNameFromInput} value={this.state.name}/>
         <br/>
         <br/>
@@ -39,7 +63,7 @@ class App extends Component {
 }
 
 export default App;
-
+*/
 
 /*  hardcoded
 
@@ -69,11 +93,8 @@ class App extends Component {
 
 }
 
-export default App; 
+export default App;
 */
-
-
-
 
 /*class App extends Component {
   render() {
