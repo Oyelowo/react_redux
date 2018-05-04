@@ -1,3 +1,7 @@
 npm install -g create-react-app
 create-react-app my-react-app
 cd my-react-app/
+
+
+third party library for creating unique id
+npm install react-html-id

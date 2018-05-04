@@ -17,3 +17,5 @@ break should be used as <br/> in jsx and not just <br> which works in normal htm
 
 events are passed down but triggered upward.
 
+state cannot be mutated. so, sometimes, u have to create a copy of the state
+
