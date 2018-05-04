@@ -1,36 +1,9 @@
-<div name={"fs"}>Hello</div>
-
 The above JSX is transpiled into the below, using babeljs.io/repl
 
-"use strict";
-
-React.createElement(
-  "div",
-  { name: "fs" },
-  "Hello"
-);
+Components should be capitalised at the beginning
 
 
+state vs prop.
+useful for dynamic website.
+state does from inside, prop does it from outside
 
-class App extends Component {
-  render() {
-    return (
-    <div id="name">
-    <h1>Hello</h1>
-    </div>
-    );
-  }
-}
-
-
-you can also do the above as below by creating a function above the 
-
-return (
-    <div>
-    <sayHi>Hello</sayHi>
-    </div>
-    );
-
-
-
-Class vs ess6 functional components.

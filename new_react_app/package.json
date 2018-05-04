@@ -1,6 +1,6 @@
 {
-  "name": "my-react-app",
-  "version": "0.1.0-beta",
+  "name": "new_react_app",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^16.3.2",
