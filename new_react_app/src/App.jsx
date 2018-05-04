@@ -2,22 +2,31 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Parent from './components/parentToChild/parent';
-// import Child from './components/parentToChild/child.jsx'
-// import Users from './users/Users.jsx'
+// import Child from './components/parentToChild/child.jsx' import Users from
+// './users/Users.jsx'
 
 class App extends Component {
-  state={
-    title:'placeholder title'
+  state = {
+    title: 'placeholder title'
   }
 
-changeTheWorld = (newTitle) => {
-  this.setState({title:newTitle})
-}
+  changeTheWorld = (newTitle) => {
+    this.setState({title: newTitle})
+  }
 
   render() {
     return (
       <div className="App">
-      <Parent doWhatever={this.changeTheWorld.bind(this, 'new World')} title={this.state.title}/>
+        {/* <Parent doWhatever={this.changeTheWorld.bind(this, 'new World')} title={this.state.title}/> */}
+        <Parent
+          changeTheWorldEvent={this
+          .changeTheWorld
+          .bind(this, 'new world')}
+          keepTheWorldSameEvent={this
+          .changeTheWorld
+          .bind(this, 'same world')}
+          title={this.state.title}/>
+
       </div>
     )
   }

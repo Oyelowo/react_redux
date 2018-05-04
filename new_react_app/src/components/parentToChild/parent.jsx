@@ -6,8 +6,8 @@ const Parent = (props) =>{
 <div>
     {/* this passes everything from the grandfather to the child */} 
     {/* <Child {...props} xyz='xyz'/>  */}
-    <Child doWhatever={props.changeTheWorldEvent}/> 
-    <Child doWhatever={props.changeTheWorldEvent}/> 
+    <Child doWhatever={props.changeTheWorldEvent} title={props.title}/> 
+    <Child doWhatever={props.keepTheWorldSameEvent} title={props.title}/> 
 </div>
     );
 }
