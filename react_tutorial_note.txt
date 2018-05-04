@@ -7,3 +7,11 @@ state vs prop.
 useful for dynamic website.
 state does from inside, prop does it from outside
 
+setState lets you understand how virtual DOM works.
+
+
+you can only create state in class that extends Component object.
+functional components are stateless components and cannot be used if you need to set state.
+
+break should be used as <br/> in jsx and not just <br> which works in normal html
+
