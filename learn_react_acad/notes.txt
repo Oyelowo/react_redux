@@ -1,0 +1,7 @@
+ return (
+      <div className="App">
+        <h1>I am a good guy </h1> 
+      </div>
+    );
+    // above jsx gets compiled into the javascript below. This is why we import react. it creates element in the background:
+    // return React.createElement('div', {className: 'App'}, React.createElement('hi', null, 'Hi, i am react app!!'));
