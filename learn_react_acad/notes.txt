@@ -10,3 +10,5 @@
 
 NOTE:
 when using a method/function in event handling in the rendering session of a class. don't use the paranthesis at the end of the function because it executes it immediately the browser renders the component.
+
+-you can also pass methods as props, so that you can call a method which might change its state from another component which doesnt and shouldnt have direct access to the state.
