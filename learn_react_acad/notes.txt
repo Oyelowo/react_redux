@@ -5,3 +5,8 @@
     );
     // above jsx gets compiled into the javascript below. This is why we import react. it creates element in the background:
     // return React.createElement('div', {className: 'App'}, React.createElement('hi', null, 'Hi, i am react app!!'));
+
+
+
+NOTE:
+when using a method/function in event handling in the rendering session of a class. don't use the paranthesis at the end of the function because it executes it immediately the browser renders the component.
