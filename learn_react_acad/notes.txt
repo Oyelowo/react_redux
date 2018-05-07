@@ -4,6 +4,7 @@
       </div>
     );
     // above jsx gets compiled into the javascript below. This is why we import react. it creates element in the background:
+However, using the below format doesn't make sense as it is cumbersome.
     // return React.createElement('div', {className: 'App'}, React.createElement('hi', null, 'Hi, i am react app!!'));
 
 
