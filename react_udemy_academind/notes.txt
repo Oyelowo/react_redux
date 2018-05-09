@@ -29,3 +29,31 @@ const boy = new Person();
 console.log(boy.gender)
 
 
+
+
+
+NEXT GENERATION JAVASCRIPT, WITHOUT USING CONSTRUCTOR BUT ARROW FUNCTION.
+class Human {
+   gender = 'female'  
+  printGender = () => {
+    console.log(this.gender);
+  }
+}
+
+
+class Person extends Human{
+    name = 'lowo';
+    gender= 'male';
+    printName = () => {
+    console.log(this.name);
+  }
+}
+
+
+const boy = new Person();
+
+boy.printName();
+boy.printGender(); 
+console.log(boy.gender)
+
+
