@@ -57,3 +57,25 @@ boy.printGender();
 console.log(boy.gender)
 
 
+
+
+SPREAD AND REST OPERATORS.
+const num1 = [1,2,3];
+const num2 = [...num1, 5, 7];
+
+// this takes the array as one element and does not pull out the values
+// const num2 = [num1, 5, 7];
+
+console.log(num2)
+
+const person = {
+  name: 'lowo',
+  age: 23
+}
+
+const newMan = {
+  ...person,
+  interest: 'coding'
+}
+
+console.log(newMan)
