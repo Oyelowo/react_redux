@@ -100,4 +100,34 @@ console.log(num1, num2);
 // if I need to skip num2 and take 3, I can just omit it and separate with coma
 [num1, ,num3] = nums;
 
-console.log(num1, num3);
+console.log(num1, num3);¨
+
+
+
+#OBJECTS AND ARRAYS ARE REFERENCED TYPE, WHILE NUMBERS, STRINGS AND BOOLEANS ARE PRIMITIVES.
+const name= 'lowo';
+
+const name2=name;
+
+console.log(name2); //prints lowo
+
+
+OBJECTS REFERENCING.
+const boy1 = {name:'lowo', age: 23};
+
+// boy2 changes with change in boy1
+// const boy2 = boy1;
+
+// boy2 stays as the initial state of boy1 when it was copied
+const boy2 = {
+  ...boy1
+};
+
+// by reassigning the name in boy1, it also affects the boy2. as below. to solve this, use the spread operator on the object while copying.
+boy1.name='dayo'
+console.log(boy2);  
+
+
+
+console.log(boy2);  
+
