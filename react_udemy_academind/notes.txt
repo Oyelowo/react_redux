@@ -118,16 +118,36 @@ const boy1 = {name:'lowo', age: 23};
 // boy2 changes with change in boy1
 // const boy2 = boy1;
 
-// boy2 stays as the initial state of boy1 when it was copied
+// boy2 stays as the initial state of boy1 when it was copied.  this copies the properties and not the entire object
+const boy2 = {
 const boy2 = {
   ...boy1
 };
 
-// by reassigning the name in boy1, it also affects the boy2. as below. to solve this, use the spread operator on the object while copying.
+// by reassigning the name in boy1, it also affects the boy2. as below. to solve this, use the spread operator on the object while copying. 
 boy1.name='dayo'
 console.log(boy2);  
 
 
 
 console.log(boy2);  
+
+
+
+
+
+REDUCERS WITH OBJECTS:
+var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+
+var countedNames = names.reduce(function (allNames, name) { 
+  if (name in allNames) {
+    allNames[name]++;
+  }
+  else {
+    allNames[name] = 1;
+  }
+  return allNames;
+}, {});
+// countedNames is:
+// { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
 
