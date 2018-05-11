@@ -1,0 +1,21 @@
+.Person{
+    width: 60%;
+    margin: auto;
+    border: 1px solid #222;
+    padding: 20px;
+    margin-bottom: 10px;
+    
+}
+
+/* button{
+    background: #222;
+    color: white;
+    padding: 5px;
+    
+    
+}
+
+button:hover{
+    background: coral;
+    color:  #eaeaea;
+} */
