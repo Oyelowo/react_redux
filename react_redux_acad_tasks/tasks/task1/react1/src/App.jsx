@@ -76,7 +76,7 @@ class App extends Component {
         </section>
 
         <section className="App">
-          <UserOutput username={this.state.username[2].name}>I love nature</UserOutput>
+          <UserOutput username='Sonja'>I love nature</UserOutput>
           <UserInput
             username={this.state.username[2].name}
             changeName={this
