@@ -39,15 +39,7 @@ class App extends Component {
   }
 
   deletePersonHandler = (personIndex) => {
-    // because arrays and objects are referenced (and not primitives like string, numbers and booleans), 
-    // when you only assign an array to a new variable, an alteration in one can affect
-    // the other which might lead to unintended consequences. therefore, I should use the slice method or
-    //  spread operator to first copy the array to create an entirely new copy which will not affect the original
-    //  in the course of alteration, as below where I splice elements in the list
-    // use either the slice or spreat operator to copy the array
-    //Always update state in immutable way
-    // const persons = this.state.persons.slice();  //this is an alternative
-    const persons = [...this.state.persons];
+    const persons = this.state.persons;
     persons.splice(personIndex, 1);
     this.setState({persons: persons})
   }

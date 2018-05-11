@@ -21,6 +21,23 @@ class App extends Component {
     showPersons: false
   }
 
+  changeName = (newName) => {
+    this.setState({
+      persons: [
+        {
+          name: newName,
+          age: 23
+        }, {
+          name: 'SamBoy',
+          age: 25
+        }, {
+          name: 'SonjaGirl',
+          age: 21
+        }
+      ]
+    })
+  }
+
   nameChangeHandler = (event) => {
     this.setState({
       persons: [
@@ -36,20 +53,6 @@ class App extends Component {
         }
       ]
     })
-  }
-
-  deletePersonHandler = (personIndex) => {
-    // because arrays and objects are referenced (and not primitives like string, numbers and booleans), 
-    // when you only assign an array to a new variable, an alteration in one can affect
-    // the other which might lead to unintended consequences. therefore, I should use the slice method or
-    //  spread operator to first copy the array to create an entirely new copy which will not affect the original
-    //  in the course of alteration, as below where I splice elements in the list
-    // use either the slice or spreat operator to copy the array
-    //Always update state in immutable way
-    // const persons = this.state.persons.slice();  //this is an alternative
-    const persons = [...this.state.persons];
-    persons.splice(personIndex, 1);
-    this.setState({persons: persons})
   }
 
   togglePersonsHandler = () => {
@@ -68,23 +71,31 @@ class App extends Component {
       cursor: 'pointer'
     };
 
+
     // create the persons variable
     let persons = null;
 
     if (this.state.showPersons) {
       persons = (
         <div>
-          {this
-            .state
-            .persons
-            .map((person, index) => {
-              // can also use {this.deletePersonHandler.bind(this, index)} below
-              return <Person
-                click={() => this.deletePersonHandler(index)}
-                name={person.name}
-                age={person.age}/>
-            })}
+          <Person
+            click={this
+            .changeName
+            .bind(this, 'Dayo')}
+            name={this.state.persons[0].name}
+            age={this.state.persons[0].age}>: More about me</Person>
 
+          <Person
+            click={() => this.changeName('FInnfrican')}
+            name={this.state.persons[1].name}
+            age={this.state.persons[1].age}></Person>
+
+          <Person
+            nameChangeEvent={this
+            .nameChangeHandler
+            .bind(this)}
+            name={this.state.persons[2].name}
+            age={this.state.persons[2].age}></Person>
         </div>
       )
     }
