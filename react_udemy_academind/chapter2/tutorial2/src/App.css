@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+button{
+  cursor: pointer;
+  padding: '8px';
+}
+
 .red {
   color: red;
 }

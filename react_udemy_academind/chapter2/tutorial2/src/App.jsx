@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import Radium from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -90,7 +91,12 @@ class App extends Component {
       font: 'inherit',
       border: '1px solid: 01, blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+
+      ':hover': {
+        backgroundColor : 'coral',
+        color: 'black'
+      } 
     };
 
     // create the persons variable
@@ -117,6 +123,11 @@ class App extends Component {
       style.backgroundColor = 'lavender';
       style.color = 'black';
       // style['backgroundColor'] = 'red';
+
+      style[':hover'] = {
+        backgroundColor : 'lightgreen',
+        color: 'black'
+      } 
     }
 
 // this can be done manually but this is done for dynamism
@@ -145,4 +156,5 @@ class App extends Component {
   }
 }
 
-export default App;
+//Radium(App) : higher order component injecting more function. can also be used on functional component
+export default Radium(App);
