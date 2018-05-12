@@ -6,7 +6,9 @@ const compStyle = {
     padding: '16px',
     textAlign: 'center',
     margin: '16px',
-    border: '1px dotted blue'
+    border: '1px dotted blue',
+    pointer: 'cursor',
+    cursor: 'pointer'
 }
 
   return (
