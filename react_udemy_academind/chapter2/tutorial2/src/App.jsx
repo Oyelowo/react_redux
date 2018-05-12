@@ -23,6 +23,15 @@ class App extends Component {
     showPersons: false
   }
 
+  makeOlder = () =>{
+    const AllPersons = [...this.state.persons];
+    const updatedPersons =  AllPersons.map(el => {
+     el.age++;
+     return el
+    })
+    this.setState({persons: updatedPersons})
+  }
+
   nameChangeHandler = (event, id) => {
     const personIndex = this
       .state
@@ -76,7 +85,8 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: '#333',
+      color:'white',
       font: 'inherit',
       border: '1px solid: 01, blue',
       padding: '8px',
@@ -104,11 +114,26 @@ class App extends Component {
 
         </div>
       )
+      style.backgroundColor = 'lavender';
+      style.color = 'black';
+      // style['backgroundColor'] = 'red';
     }
+
+// this can be done manually but this is done for dynamism
+    const classesP = [];
+
+    if(this.state.persons.length <=2){
+      classesP.push('red'); //classes =['red']
+    }
+    if(this.state.persons.length <=1){
+      classesP.push('bold'); //classes =['red', 'bold']
+    }
+
 
     return (
       <div className="App">
         <h1>Let's make this work</h1>
+        <p className={classesP.join(' ')}>This is really working</p>
         <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
         <br/>
         <br/>
