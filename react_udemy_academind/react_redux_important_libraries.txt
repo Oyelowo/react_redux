@@ -1,3 +1,3 @@
 
-for creating hover style and others in internal css styling of react JSX
+for creating pseudo style(e.g: hover style) and media-queries and others in internal css styling of react JSX
 npm install --save radium
