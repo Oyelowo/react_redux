@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import Radium from 'radium';
+import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -24,11 +24,11 @@ class App extends Component {
     showPersons: false
   }
 
-  makeOlder = () =>{
+  makeOlder = () => {
     const AllPersons = [...this.state.persons];
-    const updatedPersons =  AllPersons.map(el => {
-     el.age++;
-     return el
+    const updatedPersons = AllPersons.map(el => {
+      el.age++;
+      return el
     })
     this.setState({persons: updatedPersons})
   }
@@ -41,21 +41,22 @@ class App extends Component {
         return p.id === id
       })
 
-      //copy the object, so that the original is not mutated and then find the
-      //person with that specific personIndex
+    // copy the object, so that the original is not mutated and then find the person
+    // with that specific personIndex
     const person = {
       ...this.state.persons[personIndex]
     }
 
-    // Alternative  const person = Object.assign({}, this.state.persons[personIndex]);
-    
-    // then change the name of the particular person to the input value of the target event
+    // Alternative  const person = Object.assign({},
+    // this.state.persons[personIndex]); then change the name of the particular
+    // person to the input value of the target event
     person.name = event.target.value;
 
     // again, copy the original list of persons
     const persons = [...this.state.persons];
 
-    // update the particular person which is being changed by assigning to corresponding index on the original list
+    // update the particular person which is being changed by assigning to
+    // corresponding index on the original list
     persons[personIndex] = person;
 
     //now, set the state to the newly altered list
@@ -67,9 +68,9 @@ class App extends Component {
     // numbers and booleans), when you only assign an array to a new variable, an
     // alteration in one can affect the other which might lead to unintended
     // consequences. therefore, I should use the slice method or  spread operator to
-    // first copy the array to create an entirely new copy which will not affect
-    // the original  in the course of alteration, as below where I splice elements
-    // in the list use either the slice or spreat operator to copy the array Always
+    // first copy the array to create an entirely new copy which will not affect the
+    // original  in the course of alteration, as below where I splice elements in
+    // the list use either the slice or spreat operator to copy the array Always
     // update state in immutable way const persons = this.state.persons.slice();
     // //this is an alternative
     const persons = [...this.state.persons];
@@ -87,16 +88,16 @@ class App extends Component {
   render() {
     const style = {
       backgroundColor: '#333',
-      color:'white',
+      color: 'white',
       font: 'inherit',
       border: '1px solid: 01, blue',
       padding: '8px',
       cursor: 'pointer',
 
       ':hover': {
-        backgroundColor : 'coral',
+        backgroundColor: 'coral',
         color: 'black'
-      } 
+      }
     };
 
     // create the persons variable
@@ -125,36 +126,38 @@ class App extends Component {
       // style['backgroundColor'] = 'red';
 
       style[':hover'] = {
-        backgroundColor : 'lightgreen',
+        backgroundColor: 'lightgreen',
         color: 'black'
-      } 
+      }
     }
 
-// this can be done manually but this is done for dynamism
+    // this can be done manually but this is done for dynamism
     const classesP = [];
 
-    if(this.state.persons.length <=2){
+    if (this.state.persons.length <= 2) {
       classesP.push('red'); //classes =['red']
     }
-    if(this.state.persons.length <=1){
+    if (this.state.persons.length <= 1) {
       classesP.push('bold'); //classes =['red', 'bold']
     }
 
-
     return (
-      <div className="App">
-        <h1>Let's make this work</h1>
-        <p className={classesP.join(' ')}>This is really working</p>
-        <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
-        <br/>
-        <br/>
-        <button onClick={this.makeOlder}>make older</button>
+      <StyleRoot>
+        <div className="App">
+          <h1>Let's make this work</h1>
+          <p className={classesP.join(' ')}>This is really working</p>
+          <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
+          <br/>
+          <br/>
+          <button onClick={this.makeOlder}>make older</button>
 
-        {persons}
-      </div>
+          {persons}
+        </div>
+      </StyleRoot>
     );
   }
 }
 
-//Radium(App) : higher order component injecting more function. can also be used on functional component
+// Radium(App) : higher order component injecting more function. can also be used
+// on functional component
 export default Radium(App);
