@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-// import Radium, {StyleRoot} from 'radium';
+import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -93,6 +93,11 @@ class App extends Component {
       border: '1px solid: 01, blue',
       padding: '8px',
       cursor: 'pointer',
+
+      ':hover': {
+        backgroundColor: 'coral',
+        color: 'black'
+      }
     };
 
     // create the persons variable
@@ -139,6 +144,7 @@ class App extends Component {
     // all the elements in the return have to be wrap in StyleRoot to make t´Radium
     // work for media queries
     return (
+      <StyleRoot>
         <div className="App">
           <h1>Let's make this work</h1>
           <p className={classesP.join(' ')}>This is really working</p>
@@ -149,10 +155,11 @@ class App extends Component {
 
           {persons}
         </div>
+      </StyleRoot>
     );
   }
 }
 
 // Radium(App) : higher order component injecting more function. can also be
-// used on functional component: Radium(App)
-export default App;
+// used on functional component
+export default Radium(App);

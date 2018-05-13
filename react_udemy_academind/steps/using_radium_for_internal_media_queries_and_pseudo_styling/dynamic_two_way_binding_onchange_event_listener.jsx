@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-// import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -24,15 +23,6 @@ class App extends Component {
     showPersons: false
   }
 
-  makeOlder = () => {
-    const AllPersons = [...this.state.persons];
-    const updatedPersons = AllPersons.map(el => {
-      el.age++;
-      return el
-    })
-    this.setState({persons: updatedPersons})
-  }
-
   nameChangeHandler = (event, id) => {
     const personIndex = this
       .state
@@ -41,22 +31,21 @@ class App extends Component {
         return p.id === id
       })
 
-    // copy the object, so that the original is not mutated and then find the person
-    // with that specific personIndex
+      //copy the object, so that the original is not mutated and then find the
+      //person with that specific personIndex
     const person = {
       ...this.state.persons[personIndex]
     }
 
-    // Alternative  const person = Object.assign({},
-    // this.state.persons[personIndex]); then change the name of the particular
-    // person to the input value of the target event
+    // Alternative  const person = Object.assign({}, this.state.persons[personIndex]);
+    
+    // then change the name of the particular person to the input value of the target event
     person.name = event.target.value;
 
     // again, copy the original list of persons
     const persons = [...this.state.persons];
 
-    // update the particular person which is being changed by assigning to
-    // corresponding index on the original list
+    // update the particular person which is being changed by assigning to corresponding index on the original list
     persons[personIndex] = person;
 
     //now, set the state to the newly altered list
@@ -87,12 +76,11 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor: '#333',
-      color: 'white',
+      backgroundColor: 'white',
       font: 'inherit',
       border: '1px solid: 01, blue',
       padding: '8px',
-      cursor: 'pointer',
+      cursor: 'pointer'
     };
 
     // create the persons variable
@@ -116,43 +104,20 @@ class App extends Component {
 
         </div>
       )
-      style.backgroundColor = 'lavender';
-      style.color = 'black';
-      // style['backgroundColor'] = 'red';
-
-      style[':hover'] = {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
     }
 
-    // this can be done manually but this is done for dynamism
-    const classesP = [];
-
-    if (this.state.persons.length <= 2) {
-      classesP.push('red'); //classes =['red']
-    }
-    if (this.state.persons.length <= 1) {
-      classesP.push('bold'); //classes =['red', 'bold']
-    }
-
-    // all the elements in the return have to be wrap in StyleRoot to make t´Radium
-    // work for media queries
     return (
-        <div className="App">
-          <h1>Let's make this work</h1>
-          <p className={classesP.join(' ')}>This is really working</p>
-          <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
-          <br/>
-          <br/>
-          <button onClick={this.makeOlder}>make older</button>
+      <div className="App">
+        <h1>Let's make this work</h1>
+        <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
+        <br/>
+        <br/>
+        <button onClick={this.makeOlder}>make older</button>
 
-          {persons}
-        </div>
+        {persons}
+      </div>
     );
   }
 }
 
-// Radium(App) : higher order component injecting more function. can also be
-// used on functional component: Radium(App)
 export default App;
