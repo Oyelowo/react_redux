@@ -1,0 +1,11 @@
+PSEUDO STYLING AND MEDIA QUERY.
+
+METHOD 1:
+This can be done by using radium which can be installed by:
+npm install radium.
+
+METHOD 2: 
+By ejecting scripts:
+npm run eject
+
+
