@@ -1,10 +1,16 @@
 .Person{
-    width: 60%;
+    width: 80%;
     margin: auto;
     border: 1px solid #222;
     padding: 20px;
     margin-bottom: 10px;
     
+}
+
+@media (min-width: 500px){
+    .Person{
+        width: 60%;
+    }
 }
 
 /* button{
