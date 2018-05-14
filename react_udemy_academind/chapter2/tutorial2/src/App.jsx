@@ -34,6 +34,15 @@ class App extends Component {
     this.setState({persons: updatedPersons})
   }
 
+  makeYounger = () => {
+    const persons = [...this.state.persons];
+    const youngerPersons = persons.map(person => {
+      person.age--;
+      return person;
+    });
+
+    this.setState({persons: youngerPersons});
+  }
   nameChangeHandler = (event, id) => {
     const personIndex = this
       .state
@@ -134,7 +143,8 @@ class App extends Component {
           <button className={btnClass} onClick={this.togglePersonsHandler}>Toggle Persons</button>
           <br/>
           <br/>
-          <button onClick={this.makeOlder}>make older</button>
+          <button onClick={this.makeOlder}>make us older</button> <s></s>
+          <button onClick={this.makeYounger}>Make Younger</button>
 
           {persons}
         </div>
