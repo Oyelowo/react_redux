@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import './App.css';
+// import './App.css';
+import classes from './App.css';
 // import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person';
 
@@ -86,17 +87,10 @@ class App extends Component {
   }
 
   render() {
-    const style = {
-      backgroundColor: '#333',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid: 01, blue',
-      padding: '8px',
-      cursor: 'pointer',
-    };
 
     // create the persons variable
     let persons = null;
+    let btnClass ='';
 
     if (this.state.showPersons) {
       persons = (
@@ -115,34 +109,29 @@ class App extends Component {
             })}
 
         </div>
-      )
-      style.backgroundColor = 'lavender';
-      style.color = 'black';
-      // style['backgroundColor'] = 'red';
+      );
 
-      style[':hover'] = {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+      btnClass = classes.Red;
+
     }
 
     // this can be done manually but this is done for dynamism
     const classesP = [];
 
     if (this.state.persons.length <= 2) {
-      classesP.push('red'); //classes =['red']
+      classesP.push(classes.red); //classes =['red']
     }
     if (this.state.persons.length <= 1) {
-      classesP.push('bold'); //classes =['red', 'bold']
+      classesP.push(classes.bold); //classes =['red', 'bold']
     }
 
     // all the elements in the return have to be wrap in StyleRoot to make t´Radium
     // work for media queries
     return (
-        <div className="App">
+        <div className={classes.App}>
           <h1>Let's make this work</h1>
           <p className={classesP.join(' ')}>This is really working</p>
-          <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
+          <button className={btnClass} onClick={this.togglePersonsHandler}>Toggle Persons</button>
           <br/>
           <br/>
           <button onClick={this.makeOlder}>make older</button>
