@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import classes from './App.css';
 // import Radium, {StyleRoot} from 'radium';
 import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
   state = {
@@ -78,9 +79,9 @@ class App extends Component {
     // numbers and booleans), when you only assign an array to a new variable, an
     // alteration in one can affect the other which might lead to unintended
     // consequences. therefore, I should use the slice method or  spread operator to
-    // first copy the array to create an entirely new copy which will not affect
-    // the original  in the course of alteration, as below where I splice elements
-    // in the list use either the slice or spreat operator to copy the array Always
+    // first copy the array to create an entirely new copy which will not affect the
+    // original  in the course of alteration, as below where I splice elements in
+    // the list use either the slice or spreat operator to copy the array Always
     // update state in immutable way const persons = this.state.persons.slice();
     // //this is an alternative
     const persons = [...this.state.persons];
@@ -99,43 +100,28 @@ class App extends Component {
 
     // create the persons variable
     let persons = null;
-    let btnClass ='';
 
     if (this.state.showPersons) {
-      persons = (
-        <div>
-          <Persons persons={this.state.persons} clicked = {this.deletePersonHandler} changed={this.nameChangeHandler}/>
-        </div>
-      );
+      persons = (<Persons
+        persons={this.state.persons}
+        clicked={this.deletePersonHandler}
+        changed={this.nameChangeHandler}/>);
 
-      btnClass = classes.Red;
-
-    }
-
-    // this can be done manually but this is done for dynamism
-    const classesP = [];
-
-    if (this.state.persons.length <= 2) {
-      classesP.push(classes.red); //classes =['red']
-    }
-    if (this.state.persons.length <= 1) {
-      classesP.push(classes.bold); //classes =['red', 'bold']
     }
 
     // all the elements in the return have to be wrap in StyleRoot to make t´Radium
     // work for media queries
     return (
-        <div className={classes.App}>
-          <h1>Let's make this work</h1>
-          <p className={classesP.join(' ')}>This is really working</p>
-          <button className={btnClass} onClick={this.togglePersonsHandler}>Toggle Persons</button>
-          <br/>
-          <br/>
-          <button onClick={this.makeOlder}>make us older</button> <s></s>
-          <button onClick={this.makeYounger}>Make Younger</button>
-
+      <div className={classes.App}>
+        <Cockpit
+          showPersons={this.state.showPersons}
+          persons={this.state.persons}
+          clickToggle={this.togglePersonsHandler}
+          clickMakeOlder={this.makeOlder}
+          clickMakeYounger={this.makeYounger}
+          />
           {persons}
-        </div>
+      </div>
     );
   }
 }
