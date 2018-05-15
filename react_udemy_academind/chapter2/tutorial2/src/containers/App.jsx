@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 // import './App.css';
 import classes from './App.css';
 // import Radium, {StyleRoot} from 'radium';
-import Person from './Person/Person';
+import Persons from '../components/Persons/Persons';
 
 class App extends Component {
   state = {
@@ -104,19 +104,7 @@ class App extends Component {
     if (this.state.showPersons) {
       persons = (
         <div>
-          {this
-            .state
-            .persons
-            .map((person, index) => {
-              // can also use {this.deletePersonHandler.bind(this, index)} below
-              return <Person
-                click={() => this.deletePersonHandler(index)}
-                name={person.name}
-                age={person.age}
-                key={person.id}
-                nameChangeEvent={(event) => this.nameChangeHandler(event, person.id)}/>
-            })}
-
+          <Persons persons={this.state.persons} clicked = {this.deletePersonHandler} changed={this.nameChangeHandler}/>
         </div>
       );
 
