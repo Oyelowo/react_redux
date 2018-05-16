@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Cockpit.css'
+import Aux from '../../hoc/Aux';
 
 const cockpit = (props) => {
     // this can be done manually but this is done for dynamism
@@ -18,7 +19,7 @@ const cockpit = (props) => {
     }
 
     return (
-        <div>
+        <Aux>
             <h1>{props.appTitle}</h1>
             <p className={classesP.join(' ')}>This is really working</p>
             <button className={btnClass} onClick={props.clickToggle}>Toggle Persons</button>
@@ -27,8 +28,7 @@ const cockpit = (props) => {
             <button onClick={props.clickMakeYounger}>Make Younger</button>
             &nbsp; &nbsp;
             <button onClick={props.clickMakeOlder}>make us older</button>
-
-        </div>
+        </Aux>
     )
 }
 
