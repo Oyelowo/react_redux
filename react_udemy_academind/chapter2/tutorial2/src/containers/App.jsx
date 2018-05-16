@@ -6,7 +6,12 @@ import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
-  state = {
+  constructor(props) {
+    super(props);
+  
+   console.log('[App.js] inside constructor', props);
+
+   this.state = {
     persons: [
       {
         id: '01',
@@ -25,6 +30,49 @@ class App extends Component {
     otherState: 'some other value',
     showPersons: false
   }
+  }
+
+  componentWillMount(){
+    console.log('[App.js] inside componentWillMount()');
+  }
+
+  componentDidMount(){
+    console.log('[App.js] inside componentDidMount()')
+  }
+
+
+  shouldComponentUpdate(nextProps, nextState){
+    console.log('[UPDATE App.js] Inside shouldComponentUpdate', nextProps, nextState);
+    return true;
+  }
+
+  componentWillUpdate(nextProps, nextState){
+    console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
+  }
+
+  componentDidUpdate(){
+    console.log('[UPDATE App.js] Inside componentDidUpdate');
+  }
+  
+  // state = {
+  //   persons: [
+  //     {
+  //       id: '01',
+  //       name: 'lowo',
+  //       age: 23
+  //     }, {
+  //       id: '02',
+  //       name: 'Sam',
+  //       age: 25
+  //     }, {
+  //       id: '03',
+  //       name: 'Sonja',
+  //       age: 21
+  //     }
+  //   ],
+  //   otherState: 'some other value',
+  //   showPersons: false
+  // }
 
   makeOlder = () => {
     const AllPersons = [...this.state.persons];
@@ -79,9 +127,9 @@ class App extends Component {
     // numbers and booleans), when you only assign an array to a new variable, an
     // alteration in one can affect the other which might lead to unintended
     // consequences. therefore, I should use the slice method or  spread operator to
-    // first copy the array to create an entirely new copy which will not affect the
-    // original  in the course of alteration, as below where I splice elements in
-    // the list use either the slice or spreat operator to copy the array Always
+    // first copy the array to create an entirely new copy which will not affect
+    // the original  in the course of alteration, as below where I splice elements
+    // in the list use either the slice or spreat operator to copy the array Always
     // update state in immutable way const persons = this.state.persons.slice();
     // //this is an alternative
     const persons = [...this.state.persons];
@@ -97,6 +145,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('[App.js] inside render()')
 
     // create the persons variable
     let persons = null;
@@ -114,13 +163,12 @@ class App extends Component {
     return (
       <div className={classes.App}>
         <Cockpit
+          appTitle={this.props.title}
           showPersons={this.state.showPersons}
           persons={this.state.persons}
           clickToggle={this.togglePersonsHandler}
           clickMakeOlder={this.makeOlder}
-          clickMakeYounger={this.makeYounger}
-          />
-          {persons}
+          clickMakeYounger={this.makeYounger}/> {persons}
       </div>
     );
   }
