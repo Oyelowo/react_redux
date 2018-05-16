@@ -162,6 +162,8 @@ class App extends Component {
     // work for media queries
     return (
       <div className={classes.App}>
+
+      <button onClick={()=> {this.setState({showPersons: true})}}>Show Persons</button>
         <Cockpit
           appTitle={this.props.title}
           showPersons={this.state.showPersons}

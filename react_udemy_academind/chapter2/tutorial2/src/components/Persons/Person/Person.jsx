@@ -20,7 +20,8 @@ class Person extends Component {
     console.log('[Person.js] inside render()')
     return (
         <div className={classes.Person}> 
-        <p>I am {this.props.name} and I am {this.props.age} years old{this.props.children}. <button onClick={this.props.click}>Delete Me</button></p>
+        <p>I am {this.props.name} and I am {this.props.age} years old{this.props.children}. 
+        <button onClick={this.props.click}>Delete Me</button></p>
         <input type="text" value={this.props.name} onChange={this.props.nameChangeEvent}/>
 </div>
     )
