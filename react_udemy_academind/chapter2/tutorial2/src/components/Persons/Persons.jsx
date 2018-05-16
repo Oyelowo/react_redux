@@ -44,6 +44,8 @@ class Persons extends PureComponent {
     render() {
         console.log('[Persons.js] inside render()')
 
+        // since " ref={this.lastPersonRef}" repeats at every element of the map
+        // the ref attribute would be for the last person
         return (this.props.persons.map((person, index) => {
             return <Person
                 click={() => this.props.clicked(index)}
