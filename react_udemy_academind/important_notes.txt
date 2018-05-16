@@ -1,3 +1,6 @@
+npm install --save prop-types
+
+
 PSEUDO STYLING AND MEDIA QUERY.
 
 METHOD 1:
