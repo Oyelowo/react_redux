@@ -31,6 +31,7 @@ class Person extends Component {
         console.log('[Person.js] inside render()')
         return (
             <Aux>
+                {this.props.authenticated ? <p> I am authenticated </p> : null}
                 <p>I am {this.props.name}
                     and I am {this.props.age}
                     years old{this.props.children}.

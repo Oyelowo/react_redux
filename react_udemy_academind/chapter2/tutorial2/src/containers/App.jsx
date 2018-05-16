@@ -31,7 +31,8 @@ class App extends PureComponent {
       ],
       otherState: 'some other value',
       showPersons: false,
-      toggleClickedCounter: 0
+      toggleClickedCounter: 0,
+      authenticated: false
     }
   }
 
@@ -137,6 +138,10 @@ class App extends PureComponent {
     })
   }
 
+  loginHandler= ()=>{
+    return this.setState({authenticated: true});
+  }
+
   render() {
     console.log('[App.js] inside render()')
 
@@ -147,7 +152,8 @@ class App extends PureComponent {
       persons = (<Persons
         persons={this.state.persons}
         clicked={this.deletePersonHandler}
-        changed={this.nameChangeHandler}/>);
+        changed={this.nameChangeHandler}
+        isAuthenticated = {this.state.authenticated} />);
 
     }
     const REACT_VERSION = React.version;
@@ -163,6 +169,7 @@ class App extends PureComponent {
         }}>Show Persons</button>
         <h3>My React Versioon : {REACT_VERSION}</h3>
         <Cockpit
+        login={this.loginHandler}
           appTitle={this.props.title}
           showPersons={this.state.showPersons}
           persons={this.state.persons}

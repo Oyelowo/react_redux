@@ -24,7 +24,8 @@ const cockpit = (props) => {
         <Aux>
             <h1>{props.appTitle}</h1>
             <p className={classesP.join(' ')}>This is really working</p>
-            <button className={btnClass} onClick={props.clickToggle}>Toggle Persons</button>
+            <button className={btnClass} onClick={props.clickToggle}>Toggle Persons</button>&nbsp; &nbsp;
+            <button className={classes.Button} onClick={props.login}>log in</button>
             <br/>
             <br/>
             <button onClick={props.clickMakeYounger}>Make Younger</button>
