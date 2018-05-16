@@ -14,10 +14,7 @@ class Persons extends PureComponent {
     }
     componentDidMount() {
         console.log('[Persons.js] inside componentDidMount()');
-        this
-            .lastPersonRef
-            .current
-            .focus();
+        this.lastPersonRef.current.myFocus();
     }
 
     // instead of doing this manually, we can just use PureComponent rather than
