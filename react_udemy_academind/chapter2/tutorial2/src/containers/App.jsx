@@ -7,6 +7,8 @@ import Cockpit from '../components/Cockpit/Cockpit';
 import Aux from '../hoc/Aux'
 import withClass from '../hoc/withClass';
 
+export const AuthContext = React.createContext(false);
+
 class App extends PureComponent {
   constructor(props) {
     super(props);
@@ -51,19 +53,32 @@ class App extends PureComponent {
   // too. shouldComponentUpdate(nextProps, nextState){   console.log('[UPDATE
   // App.js] Inside shouldComponentUpdate', nextProps, nextState);   return
   // nextState.person !== this.state.persons ||   nextState.showPersons !==
-  // this.state.showPersons; } componentWillUpdate(nextProps, nextState){
-  // console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps,
-  // nextState); }
+  // this.state.showPersons; }
+
+  componentWillUpdate(nextProps, nextState) {
+    console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
+  }
+
+  // if u need to bring state and props in sync
+  static getDerivedStateFromProps(nextProps, prevState){
+    console.log('[UPDATE App.js] Inside getDerivedStateFromProps', nextProps, prevState);
+    return prevState;
+  }
+
+  getSnapshotBeforeUpdate(){
+    console.log('[UPDATE App.js] Inside getSnapshotBeforeUpdate');
+ 
+  }
 
   componentDidUpdate() {
     console.log('[UPDATE App.js] Inside componentDidUpdate');
   }
 
   // state can also be in constructor but this keyword should be added when used
-  // in the constructor. this is not necessary state = {   persons: [     {
-  // id: '01',       name: 'lowo',       age: 23     }, {       id: '02',
-  // name: 'Sam',       age: 25     }, {       id: '03',       name: 'Sonja',
-  //  age: 21     }   ],   otherState: 'some other value',   showPersons: false }
+  // in the constructor. this is not necessary state = {   persons: [     { id:
+  // '01',       name: 'lowo',       age: 23     }, {       id: '02', name: 'Sam',
+  //       age: 25     }, {       id: '03',       name: 'Sonja',  age: 21     } ],
+  //   otherState: 'some other value',   showPersons: false }
 
   makeOlder = () => {
     const AllPersons = [...this.state.persons];
@@ -138,7 +153,7 @@ class App extends PureComponent {
     })
   }
 
-  loginHandler= ()=>{
+  loginHandler = () => {
     return this.setState({authenticated: true});
   }
 
@@ -152,8 +167,7 @@ class App extends PureComponent {
       persons = (<Persons
         persons={this.state.persons}
         clicked={this.deletePersonHandler}
-        changed={this.nameChangeHandler}
-        isAuthenticated = {this.state.authenticated} />);
+        changed={this.nameChangeHandler}/>);
 
     }
     const REACT_VERSION = React.version;
@@ -169,13 +183,17 @@ class App extends PureComponent {
         }}>Show Persons</button>
         <h3>My React Versioon : {REACT_VERSION}</h3>
         <Cockpit
-        login={this.loginHandler}
+          login={this.loginHandler}
           appTitle={this.props.title}
           showPersons={this.state.showPersons}
           persons={this.state.persons}
           clickToggle={this.togglePersonsHandler}
           clickMakeOlder={this.makeOlder}
-          clickMakeYounger={this.makeYounger}/> {persons}
+          clickMakeYounger={this.makeYounger}/>
+
+        <AuthContext.Provider value={this.state.authenticated}>
+          {persons}
+        </AuthContext.Provider>
       </Aux>
     );
   }
