@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './Cockpit.css'
 import Aux from '../../hoc/Aux';
 
-
 const cockpit = (props) => {
     // this can be done manually but this is done for dynamism
     const classesP = [];
