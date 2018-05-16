@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 // import './App.css';
 import classes from './App.css';
 // import Radium, {StyleRoot} from 'radium';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
-class App extends Component {
+class App extends PureComponent {
   constructor(props) {
     super(props);
   
@@ -41,19 +41,27 @@ class App extends Component {
   }
 
 
-  shouldComponentUpdate(nextProps, nextState){
-    console.log('[UPDATE App.js] Inside shouldComponentUpdate', nextProps, nextState);
-    return true;
-  }
 
-  componentWillUpdate(nextProps, nextState){
-    console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
-  }
+  // instead of doing this manually, we can just use PureComponent
+  // rather than normal Component. It does this checking to see if 
+  // any of the properties has been updated and update when just that property is changed
+  // However, they should not be used everywhere anyhow as they might affect app performance too. 
+  // shouldComponentUpdate(nextProps, nextState){
+  //   console.log('[UPDATE App.js] Inside shouldComponentUpdate', nextProps, nextState);
+  //   return nextState.person !== this.state.persons ||
+  //   nextState.showPersons !== this.state.showPersons;
+  // }
+
+  // componentWillUpdate(nextProps, nextState){
+  //   console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
+  // }
 
   componentDidUpdate(){
     console.log('[UPDATE App.js] Inside componentDidUpdate');
   }
   
+  // state can also be in constructor but this keyword should be added when used in
+  // the constructor. this is not necessary
   // state = {
   //   persons: [
   //     {
