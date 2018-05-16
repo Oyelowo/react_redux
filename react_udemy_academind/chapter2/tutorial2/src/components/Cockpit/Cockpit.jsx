@@ -5,9 +5,9 @@ const cockpit = (props) => {
     // this can be done manually but this is done for dynamism
     const classesP = [];
 
-    let btnClass = '';
+    let btnClass = classes.Button;
     if (props.showPersons) {
-        btnClass = classes.Red;
+        btnClass = [classes.Button, classes.Red].join(' ');
     }
 
     if (props.persons.length <= 2) {
@@ -18,7 +18,7 @@ const cockpit = (props) => {
     }
 
     return (
-        <div className={classes.Cockpit}>
+        <div>
             <h1>{props.appTitle}</h1>
             <p className={classesP.join(' ')}>This is really working</p>
             <button className={btnClass} onClick={props.clickToggle}>Toggle Persons</button>
