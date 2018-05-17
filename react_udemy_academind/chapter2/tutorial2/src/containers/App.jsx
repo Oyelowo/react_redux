@@ -55,7 +55,7 @@ class App extends PureComponent {
   // nextState.person !== this.state.persons ||   nextState.showPersons !==
   // this.state.showPersons; }
 
-  componentWillUpdate(nextProps, nextState) {
+  componentWillUpdate(nextProps, nextState) { 
     console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
   }
 
