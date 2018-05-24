@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import Post from '../../components/Post/Post';
 import FullPost from '../../components/FullPost/FullPost';
@@ -7,25 +7,54 @@ import './Blog.css';
 import axios from 'axios';
 
 class Blog extends Component {
-    componentDidMount() {
-        axios.get('https:jsonplaceholder.typicode.com/posts').then(response => {
-            console.log(response);
-        });
+    state = {
+        posts: [],
+        selectedPostId : null
     }
-    
-    render () {
+
+    componentDidMount() {
+        axios
+            .get('https:jsonplaceholder.typicode.com/posts')
+            .then(response => {
+                const posts = response
+                    .data
+                    .slice(0, 4);
+                const updatedPosts = posts.map(post => {
+                    return {
+                        ...post,
+                        author: 'Oyelowo'
+                    }
+                })
+                this.setState({posts: updatedPosts});
+                // console.log(response);
+            });
+    }
+
+    postSelectedHandler = (id) => {
+        this.setState({selectedPostId: id})
+    }
+
+    render() {
+        const posts = this
+            .state
+            .posts
+            .map(post => {
+                return <Post
+                    key={post.id}
+                    title={post.title}
+                    author={post.author}
+                    clicked={() => this.postSelectedHandler(post.id)}/>
+            })
         return (
             <div>
                 <section className="Posts">
-                    <Post />
-                    <Post />
-                    <Post />
+                    {posts}
                 </section>
                 <section>
-                    <FullPost />
+                    <FullPost title={this.state.posts.title} id={this.state.selectedPostId}/>
                 </section>
                 <section>
-                    <NewPost />
+                    <NewPost/>
                 </section>
             </div>
         );
