@@ -51,7 +51,7 @@ class Blog extends Component {
                     {posts}
                 </section>
                 <section>
-                    <FullPost title={this.state.posts.title} id={this.state.selectedPostId}/>
+                    <FullPost id={this.state.selectedPostId}/>
                 </section>
                 <section>
                     <NewPost/>
