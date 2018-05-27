@@ -3,10 +3,11 @@ import React, {Component} from "react";
 // "../../components/FullPost/FullPost"; import NewPost from
 // "../../components/NewPost/NewPost";
 import "./Blog.css";
-import axios from "axios";
+// import axios from "axios";
 import Posts from "./Posts/Posts";
-import { Route, Link } from 'react-router-dom';
+import {Route, NavLink, Switch} from 'react-router-dom';
 import NewPost from './NewPost/NewPost';
+// import FullPost from './FullPost/FullPost';
 // import axios from '../../axios';
 
 class Blog extends Component {
@@ -20,25 +21,38 @@ class Blog extends Component {
             <ul>
               <li>
 
-                {/* This should be used instead of anchor(a) tag 
+                {/* This should be used instead of anchor(a) tag
                 to prevent reloading of all pages*/}
-                <Link to="/">Home</Link>
+                <NavLink
+                  to="/"
+                  exact
+                  activeClassName="my-active"
+                  activeStyle={{
+                  color: 'fa923f',
+                  textDecoration: 'underline',
+                  background: '#eaeaea',
+                  padding: '10px'
+                }}>Posts</NavLink>
               </li>
               <li>
-                <Link to={{
+                <NavLink
+                  to={{
                   pathname: "/new-post",
                   hash: '#submit',
                   search: '?quick-submit=true'
-                }}>New Post</Link>
+                }}>New Post</NavLink>
               </li>
             </ul>
           </nav>
         </header>
 
-      {/* <Route path="/" exact render={()=> <h1>Home</h1>} />
+        {/* <Route path="/" exact render={()=> <h1>Home</h1>} />
       <Route path="/" render={()=> <h1>Home2</h1>} /> */}
-      <Route path="/" exact component={Posts} />
-      <Route path="/new-post" component={NewPost} />
+
+        <Switch>
+          <Route path="/new-post" component={NewPost}/>
+          <Route path="/" component={Posts}/>
+        </Switch>
       </div>
     );
   }
