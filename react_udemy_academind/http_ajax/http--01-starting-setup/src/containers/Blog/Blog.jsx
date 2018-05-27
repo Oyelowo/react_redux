@@ -5,7 +5,7 @@ import React, {Component} from "react";
 import "./Blog.css";
 import axios from "axios";
 import Posts from "./Posts/Posts";
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import NewPost from './NewPost/NewPost';
 // import axios from '../../axios';
 
@@ -19,10 +19,17 @@ class Blog extends Component {
           <nav>
             <ul>
               <li>
-                <a href="/">Home</a>
+
+                {/* This should be used instead of anchor(a) tag 
+                to prevent reloading of all pages*/}
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="/new-post">New Post</a>
+                <Link to={{
+                  pathname: "/new-post",
+                  hash: '#submit',
+                  search: '?quick-submit=true'
+                }}>New Post</Link>
               </li>
             </ul>
           </nav>
