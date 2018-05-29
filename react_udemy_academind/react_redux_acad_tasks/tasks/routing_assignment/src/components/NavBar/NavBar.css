@@ -11,9 +11,16 @@ nav ul li{
     margin: 5px;
     cursor: pointer;
     padding: 10px;
+    
 }
 
-nav ul li:hover{
+nav a {
+    text-decoration: none;
+}
+
+nav ul li:hover,
+nav ul a.active{
     background: grey;
     color: white;
+    padding: 10px;
 }
