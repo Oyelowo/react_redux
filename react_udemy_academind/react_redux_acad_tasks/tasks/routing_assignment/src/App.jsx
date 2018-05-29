@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-
+import {BrowserRouter} from 'react-router-dom';
 import Courses from './containers/Courses/Courses';
 import Users from './containers/Users/Users';
+import NavBar from './components/NavBar/NavBar';
+
+
 
 class App extends Component {
   render () {
     return (
+      <BrowserRouter>
       <div className="App">
+      <NavBar />
         <ol style={{textAlign: 'left'}}>
           <li>Add Routes to load "Users" and "Courses" on different pages (by entering a URL, without Links)</li>
           <li>Add a simple navigation with two links => One leading to "Users", one leading to "Courses"</li>
@@ -18,6 +23,7 @@ class App extends Component {
           <li>Redirect requests to /all-courses to /courses (=> Your "Courses" page)</li>
         </ol>
       </div>
+     </BrowserRouter>
     );
   }
 }
