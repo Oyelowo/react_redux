@@ -1,8 +1,9 @@
-nav{
+/* av{
     position: fixed;
     top: 0;
     width: 100%;
-}
+    padding-bottom: 200px;
+}n */
 nav ul{
     list-style: none; 
     background: blueviolet;
