@@ -1,3 +1,8 @@
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 nav ul{
     list-style: none; 
     background: blueviolet;
@@ -10,15 +15,15 @@ nav ul li{
     display: inline-block;
     margin: 5px;
     cursor: pointer;
-    padding: 10px;
     
 }
 
 nav a {
     text-decoration: none;
+    padding: 10px;
 }
 
-nav ul li:hover,
+nav ul a:hover,
 nav ul a.active{
     background: grey;
     color: white;
