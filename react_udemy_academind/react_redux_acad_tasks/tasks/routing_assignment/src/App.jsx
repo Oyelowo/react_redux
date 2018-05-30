@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Route, Switch} from 'react-router-dom';
-import Courses from './containers/Courses/Courses';
-import Users from './containers/Users/Users';
+// import {Route, Switch} from 'react-router-dom';
+// import Courses from './containers/Courses/Courses';
+// import Users from './containers/Users/Users';
 import NavBar from './components/NavBar/NavBar';
 
 class App extends Component {

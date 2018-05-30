@@ -3,7 +3,7 @@ import {Route, NavLink, Switch} from 'react-router-dom';
 import './NavBar.css';
 import Users from '../../containers/Users/Users';
 import Courses from '../../containers/Courses/Courses';
-import Course from '../../containers/Course/Course';
+// import Course from '../../containers/Course/Course';
 
 
 class NavBar extends Component {
@@ -26,7 +26,7 @@ class NavBar extends Component {
 {/* ordering is important is switch */}
                 <Switch>
                     <Route path="/users" component={Users} />
-                    <Route path="/courses/:courseId/:courseTitle" component={Course}/>
+                    {/* <Route path="/courses/:courseId" component={Course}/> */}
                     <Route path="/courses" component={Courses}/>
                 </Switch>
 
