@@ -3,6 +3,7 @@ const DECREMENT = 'DECREMENT';
 const ADD_5 = 'ADD_5';
 const SUBTRACT_5 = 'SUBTRACT_5';
 const STORE_RESULT = 'STORE_RESULT';
+const DELETE_RESULT = 'DELETE_RESULT';
 
 const initialState = {
     counter: 0,
@@ -33,7 +34,20 @@ const reducer = (state = initialState, action) => {
         case STORE_RESULT:
             return {
                 ...state,
-                results: state.results.concat({id: new Date(), value: state.counter})
+                results: state.results.concat({
+                    id: new Date(),
+                    value: state.counter
+                })
+            }
+        case DELETE_RESULT:
+            // const id = 2;
+            // const newArray = [...state.results];
+            // newArray.splice(id, 1)
+            const updatedArray = state.results.filter(result => result.id !== action.resultElementId);
+            
+            return {
+                ...state,
+                results: updatedArray
             }
         default:
             return state;
