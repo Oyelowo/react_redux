@@ -16,7 +16,7 @@ class Persons extends Component {
                         key={person.id}
                         name={person.name} 
                         age={person.age} 
-                        clicked={(id) => this.props.personDeletedHandler(person.id)}/>
+                        clicked={() => this.props.personDeletedHandler(person.id)}/>
                 ))}
             </div>
         );
