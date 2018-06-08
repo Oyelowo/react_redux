@@ -24,7 +24,7 @@ export const add = (value) => {
     };
 };
 
-
+// synchronous action creator
 export const subtract = (val) => {
     return {
         type: SUBTRACT,
@@ -32,12 +32,22 @@ export const subtract = (val) => {
     };
 };
 
-
-export const storeResult = (res) => {
+export const saveResult = (res) => {
     return {
         type: STORE_RESULT,
         result: res
     };
+}
+
+export const storeResult = (res) => {
+    return dispatch => {
+        setTimeout(() => {
+            dispatch(saveResult(res));
+        }, 2000);
+    }
+
+
+
 };
 
 export const deleteResult = (resElId) => {
@@ -46,4 +56,3 @@ export const deleteResult = (resElId) => {
         resultElementId: resElId
     };
 };
-
