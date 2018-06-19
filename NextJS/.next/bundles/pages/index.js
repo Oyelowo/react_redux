@@ -985,28 +985,28 @@ function (_Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 8
+          lineNumber: 17
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 18
         }
-      }, "The Main Page"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+      }, "The Main Page of ", this.props.appName), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 19
         }
       }, "Go to:", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
         href: "/auth",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 20
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 21
         }
       }, "Auth"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
         onClick: function onClick() {
@@ -1014,7 +1014,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 24
         }
       }, "Go to Auth"));
     }
@@ -1024,6 +1024,19 @@ function (_Component) {
     value: function __reactstandin__regenerateByEval(key, code) {
       // @ts-ignore
       this[key] = eval(code);
+    }
+  }], [{
+    key: "getInitialProps",
+    value: function getInitialProps(context) {
+      // console.log(context);
+      var promise = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+          resolve({
+            appName: 'Super App'
+          });
+        }, 1000);
+      });
+      return promise;
     }
   }]);
 
