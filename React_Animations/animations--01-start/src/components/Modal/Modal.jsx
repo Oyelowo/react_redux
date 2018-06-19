@@ -3,7 +3,7 @@ import Transition from 'react-transition-group/Transition';
 
 import './Modal.css';
 
-const animationtiming={
+const animationTiming={
     enter: 400,
     exit: 1000
 };
