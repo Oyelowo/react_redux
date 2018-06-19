@@ -67,44 +67,88 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./pages/index.js":
+/***/ "./pages/index.jsx":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "C:\\Users\\oyeda\\Desktop\\webDev\\js_code_snippet\\react_redux\\NextJS\\pages\\index.js";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_router__ = __webpack_require__("next/router");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_router__);
+var _jsxFileName = "C:\\Users\\oyeda\\Desktop\\webDev\\js_code_snippet\\react_redux\\NextJS\\pages\\index.jsx";
+
+
 
 
 var indexPage = function indexPage() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 7
     }
   }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 8
     }
-  }, "The Main Page"));
+  }, "The Main Page"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    }
+  }, "Go to:", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
+    href: "/auth",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    }
+  }, "Auth"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
+    onClick: function onClick() {
+      return __WEBPACK_IMPORTED_MODULE_2_next_router___default.a.push("/auth");
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    }
+  }, "Go to Auth"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (indexPage);
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./pages/index.js");
+module.exports = __webpack_require__("./pages/index.jsx");
 
+
+/***/ }),
+
+/***/ "next/link":
+/***/ (function(module, exports) {
+
+module.exports = require("next/link");
+
+/***/ }),
+
+/***/ "next/router":
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 
