@@ -1,3 +1,3 @@
 console.log("big");
 
-setTimeout(()=> console.log('testing'))
+setTimeout(()=> console.log('testing')) 
