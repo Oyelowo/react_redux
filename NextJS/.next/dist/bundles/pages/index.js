@@ -67,12 +67,12 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./pages/_error.jsx":
+/***/ "./pages/index.jsx":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -83,12 +83,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_router__ = __webpack_require__("next/router");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_router__);
-var _jsxFileName = "C:\\Users\\oyeda\\Desktop\\webDev\\js_code_snippet\\react_redux\\NextJS\\pages\\_error.jsx";
+var _jsxFileName = "C:\\Users\\oyeda\\Desktop\\webDev\\js_code_snippet\\react_redux\\NextJS\\pages\\index.jsx";
 
 
 
 
-var errorPage = function errorPage() {
+var indexPage = function indexPage() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
@@ -99,13 +99,13 @@ var errorPage = function errorPage() {
       fileName: _jsxFileName,
       lineNumber: 8
     }
-  }, "Oopz! Something went wrong!"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+  }, "The Main Page"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     }
-  }, "Try:", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
-    href: "/",
+  }, "Go to:", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
+    href: "/auth",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
@@ -115,17 +115,25 @@ var errorPage = function errorPage() {
       fileName: _jsxFileName,
       lineNumber: 11
     }
-  }, "going back"))));
+  }, "Auth"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
+    onClick: function onClick() {
+      return __WEBPACK_IMPORTED_MODULE_2_next_router___default.a.push("/auth");
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    }
+  }, "Go to Auth"));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (errorPage);
+/* harmony default export */ __webpack_exports__["default"] = (indexPage);
 
 /***/ }),
 
-/***/ 0:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./pages/_error.jsx");
+module.exports = __webpack_require__("./pages/index.jsx");
 
 
 /***/ }),
@@ -152,4 +160,4 @@ module.exports = require("react");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=_error.js.map
+//# sourceMappingURL=index.js.map

@@ -2,7 +2,7 @@ module.exports =
 
         __NEXT_REGISTER_PAGE('/auth', function() {
           var comp = 
-      webpackJsonp([4],{
+      webpackJsonp([5],{
 
 /***/ "./components/User.jsx":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1228,7 +1228,7 @@ var _default = authIndexPage;
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/auth/index.jsx");
@@ -1236,7 +1236,7 @@ module.exports = __webpack_require__("./pages/auth/index.jsx");
 
 /***/ })
 
-},[3])
+},[4])
           return { page: comp.default }
         })
       ;

@@ -1,8 +1,8 @@
 module.exports =
 
-        __NEXT_REGISTER_PAGE('/_error', function() {
+        __NEXT_REGISTER_PAGE('/', function() {
           var comp = 
-      webpackJsonp([1],{
+      webpackJsonp([4],{
 
 /***/ "./node_modules/@babel/runtime/core-js/json/stringify.js":
 /***/ (function(module, exports, __webpack_require__) {
@@ -931,7 +931,7 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
-/***/ "./pages/_error.jsx":
+/***/ "./pages/index.jsx":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -942,7 +942,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_router__ = __webpack_require__("./node_modules/next/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_router__);
-var _jsxFileName = "C:\\Users\\oyeda\\Desktop\\webDev\\js_code_snippet\\react_redux\\NextJS\\pages\\_error.jsx";
+var _jsxFileName = "C:\\Users\\oyeda\\Desktop\\webDev\\js_code_snippet\\react_redux\\NextJS\\pages\\index.jsx";
 
 (function () {
   var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
@@ -954,7 +954,7 @@ var _jsxFileName = "C:\\Users\\oyeda\\Desktop\\webDev\\js_code_snippet\\react_re
 
 
 
-var errorPage = function errorPage() {
+var indexPage = function indexPage() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
@@ -965,13 +965,13 @@ var errorPage = function errorPage() {
       fileName: _jsxFileName,
       lineNumber: 8
     }
-  }, "Oopz! Something went wrong!"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+  }, "The Main Page"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     }
-  }, "Try:", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
-    href: "/",
+  }, "Go to:", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
+    href: "/auth",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
@@ -981,10 +981,18 @@ var errorPage = function errorPage() {
       fileName: _jsxFileName,
       lineNumber: 11
     }
-  }, "going back"))));
+  }, "Auth"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
+    onClick: function onClick() {
+      return __WEBPACK_IMPORTED_MODULE_2_next_router___default.a.push("/auth");
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    }
+  }, "Go to Auth"));
 };
 
-var _default = errorPage;
+var _default = indexPage;
 /* harmony default export */ __webpack_exports__["default"] = (_default);
 ;
 
@@ -997,8 +1005,8 @@ var _default = errorPage;
     return;
   }
 
-  reactHotLoader.register(errorPage, "errorPage", "C:\\Users\\oyeda\\Desktop\\webDev\\js_code_snippet\\react_redux\\NextJS\\pages\\_error.jsx");
-  reactHotLoader.register(_default, "default", "C:\\Users\\oyeda\\Desktop\\webDev\\js_code_snippet\\react_redux\\NextJS\\pages\\_error.jsx");
+  reactHotLoader.register(indexPage, "indexPage", "C:\\Users\\oyeda\\Desktop\\webDev\\js_code_snippet\\react_redux\\NextJS\\pages\\index.jsx");
+  reactHotLoader.register(_default, "default", "C:\\Users\\oyeda\\Desktop\\webDev\\js_code_snippet\\react_redux\\NextJS\\pages\\index.jsx");
   leaveModule(module);
 })();
 
@@ -1019,22 +1027,22 @@ var _default = errorPage;
           next.router.update(r, Component)
         }
       }
-    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/_error")
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/")
   
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 
-/***/ 1:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./pages/_error.jsx");
+module.exports = __webpack_require__("./pages/index.jsx");
 
 
 /***/ })
 
-},[1])
+},[3])
           return { page: comp.default }
         })
       ;
-//# sourceMappingURL=_error.js.map
+//# sourceMappingURL=index.js.map
