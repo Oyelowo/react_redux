@@ -4,9 +4,11 @@ import './Modal.css';
 
 const modal = (props) => {
     const cssClasses = [
-        'Modal', props.show
+        'Modal', props.show === 'entering'
             ? 'ModalOpen'
-            : 'ModalClosed'
+            : props.show === 'exiting'
+                ? 'ModalClosed'
+                : null
     ];
 
     return (
