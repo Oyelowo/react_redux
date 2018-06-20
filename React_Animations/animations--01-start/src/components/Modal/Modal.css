@@ -17,14 +17,14 @@
     /* display: block; */
     /* opacity: 1;
     transform: translateY(0); */
-    /* animation: openModal 0.3s ease-in-out forwards; */
+    animation: openModal 0.3s ease-in-out forwards;
 }
 
 .ModalClosed {
     /* display: none; */
     /* opacity: 0;
     transform: translateY(-100vh); */
-    /* animation: closeModal 1s ease-out forwards; */
+    animation: closeModal 1s ease-out forwards;
 }
 
 .fade-slide-enter{
@@ -32,7 +32,7 @@
 }
 
 .fade-slide-enter-active{
-    animation: openModal 0.3s ease-in-out forwards;
+    /* animation: openModal 0.3s ease-in-out forwards; */
 }
 
 .fade-slide-exit{
@@ -40,7 +40,7 @@
 }
 
 .fade-slide-exit-active{
-    animation: closeModal 1s ease-out forwards;
+    /* animation: closeModal 1s ease-out forwards; */
 }
 
 @keyframes openModal{
